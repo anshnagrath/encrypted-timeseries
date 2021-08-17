@@ -1,5 +1,4 @@
 
+cd ./emitter && npm start &
 
-node ./emitter/app.js
-
-node ./listener/app.js
+cd ./listener && npm start

@@ -1,4 +1,5 @@
 const express = require('express')
+const dotenv = require('dotenv').config();
 const app = express();
 const path = require('path');
 const server = require('http').Server(app);
@@ -34,7 +35,7 @@ io.on('connection', (client) => {
 
  client.on('server_start', (data) => { 
       console.log('starting server now' )
-      let interval = setInterval(()=>{   allClientSockets['listner-server'].emit('start_listener',  emitEvents()  ); } , 10000) ; 
+      let interval = setInterval( async ()=>{   allClientSockets['listner-server'].emit('start_listener', await emitEvents()  ); } , 10000) ; 
       emitterIntervals.push(interval);
    });
 

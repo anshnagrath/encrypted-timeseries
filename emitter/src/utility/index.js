@@ -1,5 +1,7 @@
 const dataSouce  =  require('./data.json');
 const request = require('request');
+const path  = require('path')
+const dotenv = require('dotenv').config( { path : path.join(__dirname , '../../.env')  });
 const { createHash , createCipher,createDecipher ,randomBytes} =  require('crypto');
 
 
@@ -41,7 +43,7 @@ const { createHash , createCipher,createDecipher ,randomBytes} =  require('crypt
 }
 
 
-export function SendErrorsToFlock(err) {
+ function SendErrorsToFlock(err) {
    return new Promise(async (resolve, reject) => {
      try {
    
@@ -65,4 +67,4 @@ export function SendErrorsToFlock(err) {
 
 
 
-  module.exports = { genateRandomDataFromDataSource ,  getRandomInt , generateSha256 , aesEncryption }
+  module.exports = { genateRandomDataFromDataSource ,  getRandomInt , generateSha256 , aesEncryption ,SendErrorsToFlock }

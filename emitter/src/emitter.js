@@ -1,5 +1,7 @@
 const {genateRandomDataFromDataSource ,  generateSha256,aesEncryption ,getRandomInt , SendErrorsToFlock } = require('./utility');
-const dotenv = require('dotenv').config();
+const path  = require('path')
+const dotenv = require('dotenv').config( { path : path.join(__dirname , '../.env')  });
+
 
   async function emitEvents( ) {
     try{
