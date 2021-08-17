@@ -2,6 +2,7 @@
 
 const { createDecipher,createHash } = require('crypto');
 const moment = require('moment');
+const request = require('request');
 const bactchSize = 150;
 
 function checkSHA ( dataToProcess  ){
